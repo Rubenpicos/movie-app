@@ -173,7 +173,7 @@ body {
 }
 
 .movie-item {
-    flex-grow: 1;
+    /* flex-grow: 1;  si lo activas, al quedar una tarjeta, queda demasiado ancha*/
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 6px #ddd;
@@ -232,7 +232,11 @@ input[type="button"] {
 
 .lateral input[type="text"],
 .lateral input[type="search"],
-.lateral textarea{
+.lateral textarea,
+.edit_form input[type="text"],
+.edit_form input[type="text"],
+.edit_form textarea
+{
     display: block;
     margin: 0 auto;
     margin-top: 15px;
@@ -244,6 +248,11 @@ input[type="button"] {
     opacity: 4;
     outline: 0;
     border-color: transparent;
+}
+
+.edit_form{
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
 }
 
 .footer {
