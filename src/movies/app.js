@@ -1,7 +1,7 @@
 import Add from "./modules/add.js"
 import list from "./modules/list.js";
 import storage from "./modules/storage.js";
-
+import search from "./modules/search.js";
 
 export default class App{
     constructor(){
@@ -20,9 +20,9 @@ load(){
     const movies = this.storage.getData();
     //list movies
     this.list.show(movies);
-    //search movies
+    //Search movies
 
-    console.log("la app ha sido inicializada")
+    search();
 }
 
 }
