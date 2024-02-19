@@ -1,5 +1,5 @@
 
-This project is a movie catalog that acts as a showcase for the movies you've watched this year. It utilizes HTML, CSS, and React to create an interactive and dynamic user interface.
+This project is a movie catalog that acts as a showcase for the movies you've watched this year. It utilizes HTML, CSS, and JavaScript to create an interactive and dynamic user interface.
 
 Description:
 The goal of this project is to provide an easy and fun way to keep track of the movies you've watched throughout the year. You can add new movies to your list, remove ones you've already seen, and browse through movies intuitively.
