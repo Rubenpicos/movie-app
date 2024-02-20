@@ -11,8 +11,8 @@ export default class storage{
             movies = [
                 {
                     id:0,
-                    title: 'desarrollo web',
-                    description: 'rubenpicos.com'
+                    title: 'Rubén Picos',
+                    description: 'WEB DELEVOPED'
                 }
             ]
             this.id = 1

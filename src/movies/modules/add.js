@@ -6,7 +6,7 @@ export default class Add {
 
     constructor() {
 
-        //
+        
         this.storage = new storage();
         this.list = new list();
 
@@ -35,13 +35,15 @@ export default class Add {
                 
                 //Create
                 let movie = {
-                    id: lastId++,
+                    id: lastId,
                     title,
                     description
                 }
 
                 //ADD MOVIES
                 movies.push(movie);
+                //remove the data
+                movies = movies.filter(m => m !== null);
 
                 //SAVE IN STORAGE
                 this.storage.save(movies);

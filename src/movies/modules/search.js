@@ -35,6 +35,8 @@ export default function(){
         }else{
     searchList.show(newMovie)
         }
+
+        
         return false 
     }
 
