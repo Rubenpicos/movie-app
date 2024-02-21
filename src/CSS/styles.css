@@ -21,9 +21,9 @@ body {
 }
 
 .header {
-    background: white;
+    background: #F6F7F9;
     text-align: left;
-    font-style: italic;
+    font-style: italic; 
     grid-area: header;
 
     display: flex;
@@ -32,7 +32,7 @@ body {
 
 /* Logo */
 .slideRight {
-    background: linear-gradient(90deg, #E85D04 10%, #0b70e1 100%);
+    background:#2A9D8F;
     width: 60px;
     height: 60px;
     border-radius: 300px;
@@ -130,7 +130,7 @@ body {
 }
 
 .nav {
-    background: linear-gradient(90deg, #E85D04 10%, #0b70e1 100%);
+    background: #2A9D8F;
     grid-area: nav;
     list-style: none;
 }
@@ -151,22 +151,40 @@ h2{
 }
 
 .movie-item {
-    /* flex-grow: 1;  si lo activas, al quedar una tarjeta, queda demasiado ancha*/
+    position: relative;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 6px #ddd;
     margin: 20px;
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 100px; /* Aumenta este valor para dejar espacio para el botón Delete */
     padding-left: 25px;
     padding-right: 25px;
+}
+
+.delete {
+    position: absolute;
+    bottom: 20px; /* Controla la distancia del botón Delete desde la parte inferior de la tarjeta */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #9b0202;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete:hover {
+    background-color: #7e0101;
 }
 
 button,
 input[type="submit"],
 input[type="button"] {
     width: 100px;
-    background: linear-gradient(160deg, #E85D04 2%, #0b70e1 40%);
+    background: #2A9D8F;
     color: white;
     border: 0;
     outline: 0;
@@ -183,6 +201,7 @@ input[type="button"] {
 .movie-item .edit:hover {
     background: #e77b00;
 }
+
 
 .movie-item .delete:hover {
     background: #9b0202;

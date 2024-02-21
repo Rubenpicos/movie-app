@@ -64,7 +64,7 @@ export default class List {
         this.content.innerHTML = "";
     
         // Show all the movies in the localStorage except the last one
-        for (let i = 0; i < movies.length - 1; i++) {
+        for (let i = 0; i < movies.length -1; i++) {
             const movie = movies[i];
             this.content.innerHTML += this.movieTemplate(movie);
     

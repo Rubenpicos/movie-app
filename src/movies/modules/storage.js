@@ -9,11 +9,11 @@ export default class storage{
 
         if(!movies || movies.length< 1){
             movies = [
-                {
-                    id:0,
-                    title: 'Rubén Picos',
-                    description: 'WEB DELEVOPED'
-                }
+                // {
+                //     id:0,
+                //     title: '',
+                //     description: ''
+                // }
             ]
             this.id = 1
         }else{
