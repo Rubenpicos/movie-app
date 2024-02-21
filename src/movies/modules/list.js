@@ -19,7 +19,6 @@ export default class List {
             <p class="description">${movie.description.toUpperCase()}</p>
         </article>`;
     }
-    
 
     async addToList(movie, listOfMovies) {
         // Add the movie to DOM
@@ -27,24 +26,9 @@ export default class List {
 
         // Show movie list
         this.show(listOfMovies);
-
-        try {
-            // Fetch poster URL
-            const posterUrl = await API.fetchPosterUrl(movie.title);
-
-            // Save poster URL to localStorage
-            localStorage.setItem(`poster-${movie.id}`, posterUrl);
-
-            // Display poster
-            if (posterUrl) {
-                this.displayPoster(posterUrl, movie.id);
-            }
-        } catch (error) {
-            console.error('Error fetching and displaying poster:', error);
-        }
     }
 
-    displayPoster(posterUrl, movieId) {
+    async displayPoster(posterUrl, movieId) {
         // Create poster element
         const posterElement = document.createElement('img');
         posterElement.src = posterUrl;
@@ -57,39 +41,30 @@ export default class List {
         }
     }
 
-
-
-    show(movies) {
+    async show(movies) {
         // Empty DOM from movie container
         this.content.innerHTML = "";
-    
-        // Show all the movies in the localStorage except the last one
-        for (let i = 0; i < movies.length -1; i++) {
+
+        // Show all the movies in the localStorage
+        for (let i = 0; i < movies.length; i++) {
             const movie = movies[i];
             this.content.innerHTML += this.movieTemplate(movie);
-    
-            // Retrieve poster URL from localStorage and display poster
-            const posterUrl = localStorage.getItem(`poster-${movie.id}`);
-            if (posterUrl) {
-                this.displayPoster(posterUrl, movie.id);
+
+            // Retrieve poster URL from API and display poster
+            try {
+                const posterUrl = await API.fetchPosterUrl(movie.title);
+                if (posterUrl) {
+                    this.displayPoster(posterUrl, movie.id);
+                }
+            } catch (error) {
+                console.error('Error fetching and displaying poster:', error);
             }
         }
-    
-        // Show the last movie in the list separately
-        const lastMovie = movies[movies.length - 1];
-        this.content.innerHTML += this.movieTemplate(lastMovie);
-    
-        // Retrieve poster URL from localStorage and display poster
-        const lastPosterUrl = localStorage.getItem(`poster-${lastMovie.id}`);
-        if (lastPosterUrl) {
-            this.displayPoster(lastPosterUrl, lastMovie.id);
-        }
-    
+
         // Delete button
         deleteOfList();
-    
+
         // Edit button
         edit();
     }
 }
-    
