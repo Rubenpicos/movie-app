@@ -1,4 +1,3 @@
-
 This project is a movie catalog that acts as a showcase for the movies you've watched this year. It utilizes HTML, CSS, and JavaScript to create an interactive and dynamic user interface.
 
 Description:
@@ -10,6 +9,7 @@ Remove movies from your list.
 View a complete catalog of all available movies.
 
 Technologies Used:
- - HTML: For the basic structure of the web page.
- - CSS: For the design and styling of the user interface.
- - JavaScript: For creating interactive and dynamic components.
+
+- HTML: For the basic structure of the web page.
+- CSS: For the design and styling of the user interface.
+- JavaScript: For creating interactive and dynamic components.

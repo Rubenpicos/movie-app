@@ -1,21 +1,20 @@
-import Add from "./modules/add.js"
+import Add from "./modules/add.js";
 import list from "./modules/list.js";
 import storage from "./modules/storage.js";
 import search from "./modules/search.js";
 
-export default class App{
-    constructor(){
-        //start props
+export default class App {
+  constructor() {
+    //start props
 
-        this.add= new Add();
-        this.list = new list();
-        this.storage = new storage();
-    }
+    this.add = new Add();
+    this.list = new list();
+    this.storage = new storage();
+  }
 
-
-load(){
+  load() {
     //add movies
-    this.add.movieSave()
+    this.add.movieSave();
     //
     const movies = this.storage.getData();
     //list movies
@@ -23,8 +22,5 @@ load(){
     //Search movies
 
     search();
+  }
 }
-
-}
-
-

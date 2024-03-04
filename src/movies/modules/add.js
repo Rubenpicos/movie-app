@@ -1,66 +1,51 @@
 import storage from "./storage.js";
 import list from "./list.js";
 
-
 export default class Add {
+  constructor() {
+    this.storage = new storage();
+    this.list = new list();
 
-    constructor() {
+    //Catch DOM elements
+    this.titleField = document.querySelector("#title");
+    this.descriptionField = document.querySelector("#description");
+    this.save_btn = document.querySelector("#save");
+  }
 
-        
-        this.storage = new storage();
-        this.list = new list();
+  movieSave() {
+    this.save_btn.onclick = (e) => {
+      e.preventDefault();
 
-        //Catch DOM elements
-        this.titleField = document.querySelector("#title");
-        this.descriptionField = document.querySelector("#description");
-        this.save_btn = document.querySelector("#save")
-    }
+      //
+      let movies = this.storage.getData();
+      let lastId = this.storage.getLastId();
+      console.log(movies, lastId);
 
+      let title = this.titleField.value;
+      let description = this.descriptionField.value;
 
-    movieSave() {
+      if (title != "" || description != "") {
+        //Create
+        let movie = {
+          id: lastId,
+          title,
+          description,
+        };
 
-        this.save_btn.onclick = (e) => {
-            e.preventDefault();
+        //ADD MOVIES
+        movies.push(movie);
+        //remove the data
+        movies = movies.filter((m) => m !== null);
 
-            //
-           let movies = this.storage.getData();
-           let lastId = this.storage.getLastId();
-           console.log(movies, lastId)
-           
+        //SAVE IN STORAGE
+        this.storage.save(movies);
+        //List actu
+        this.list.addToList(movie, movies);
+      } else {
+        alert("Enter data in the form");
+      }
 
-            let title = this.titleField.value;
-            let description = this.descriptionField.value
-
-            if (title != "" || description != "") {
-                
-                //Create
-                let movie = {
-                    id: lastId,
-                    title,
-                    description
-                }
-
-                //ADD MOVIES
-                movies.push(movie);
-                //remove the data
-                movies = movies.filter(m => m !== null);
-
-                //SAVE IN STORAGE
-                this.storage.save(movies);
-                //List actu
-                this.list.addToList(movie, movies);
-            } else {
-                alert("Enter data in the form")
-
-            }
-
-
-
-
-
-
-            return false;
-        }
-
-    }
+      return false;
+    };
+  }
 }

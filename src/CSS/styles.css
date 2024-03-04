@@ -1,271 +1,256 @@
 body {
-    background-color: #F6F7F9;
-    font-family: sans-serif, Arial, Helvetica, sans-serif;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
+  background-color: #f6f7f9;
+  font-family: sans-serif, Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
 }
 
 .layout {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 
-    display: grid;
-    grid-template-areas:
-        "header header header header"
-        "nav nav nav nav"
-        "content content content lateral"
-        "footer footer footer footer";
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "nav nav nav nav"
+    "content content content lateral"
+    "footer footer footer footer";
 
-    grid-template-rows: 100px 70px auto 70px;
+  grid-template-rows: 100px 70px auto 70px;
 }
 
 .header {
-    background: #F6F7F9;
-    text-align: left;
-    font-style: italic; 
-    grid-area: header;
+  background: #f6f7f9;
+  text-align: left;
+  font-style: italic;
+  grid-area: header;
 
-    display: flex;
-    justify-content: center
+  display: flex;
+  justify-content: center;
 }
 
 /* Logo */
 .slideRight {
-    background:#2A9D8F;
-    width: 60px;
-    height: 60px;
-    border-radius: 300px;
-    margin-top: 20px;
+  background: #2a9d8f;
+  width: 60px;
+  height: 60px;
+  border-radius: 300px;
+  margin-top: 20px;
 }
 
 .play {
-    width: 0;
-    height: 0;
-    margin-top: 18px;
-    margin-left: 22px;
-    border-left: 22px solid white;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
+  width: 0;
+  height: 0;
+  margin-top: 18px;
+  margin-left: 22px;
+  border-left: 22px solid white;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
 }
 
 /* Logo animation */
 @keyframes slideRight {
-    0% {
-        transform: translateX(-150%);
+  0% {
+    transform: translateX(-150%);
+  }
 
-    }
+  50% {
+    transform: translateX(8%);
+    transform: rotate(90deg);
+  }
 
-    50% {
-        transform: translateX(8%);
-        transform: rotate(90deg);
+  65% {
+    transform: translateX(-4%);
+  }
 
-    }
+  80% {
+    transform: translateX(4%);
+  }
 
-    65% {
-        transform: translateX(-4%);
-    }
+  95% {
+    transform: translateX(-2%);
+  }
 
-    80% {
-        transform: translateX(4%);
-    }
-
-    95% {
-        transform: translateX(-2%);
-    }
-
-    100% {
-        transform: translateX(0%);
-    }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 @-webkit-keyframes slideRight {
-    0% {
-        -webkit-transform: translateX(-150%);
-    }
+  0% {
+    -webkit-transform: translateX(-150%);
+  }
 
-    50% {
-        -webkit-transform: translateX(8%);
-    }
+  50% {
+    -webkit-transform: translateX(8%);
+  }
 
-    65% {
-        -webkit-transform: translateX(-4%);
-    }
+  65% {
+    -webkit-transform: translateX(-4%);
+  }
 
-    80% {
-        -webkit-transform: translateX(4%);
-    }
+  80% {
+    -webkit-transform: translateX(4%);
+  }
 
-    95% {
-        -webkit-transform: translateX(-2%);
-    }
+  95% {
+    -webkit-transform: translateX(-2%);
+  }
 
-    100% {
-        -webkit-transform: translateX(0%);
-    }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
 }
 
 .slideRight {
-    animation-name: slideRight;
-    -webkit-animation-name: slideRight;
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight;
 
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
 
-    animation-timing-function: ease-in-out;
-    -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
 
-    visibility: visible !important;
+  visibility: visible !important;
 }
-
-
-
 
 /* NAV BAR STYLES */
 
 .header h1 {
-    margin-left: 15px;
-    margin-top: 30px;
-    font-size: 40px;
+  margin-left: 15px;
+  margin-top: 30px;
+  font-size: 40px;
 }
 
 .nav {
-    background: #2A9D8F;
-    grid-area: nav;
-    list-style: none;
+  background: #2a9d8f;
+  grid-area: nav;
+  list-style: none;
 }
 
-h2{
-    color: black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+h2 {
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .content {
-    background: #f6f7f9;
-    grid-area: content;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-   
+  background: #f6f7f9;
+  grid-area: content;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .movie-item {
-    position: relative;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 6px #ddd;
-    margin: 20px;
-    padding-top: 60px;
-    padding-bottom: 100px; /* Aumenta este valor para dejar espacio para el botón Delete */
-    padding-left: 25px;
-    padding-right: 25px;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 20px;
+  padding-top: 60px;
+  padding-bottom: 100px; /* Aumenta este valor para dejar espacio para el botón Delete */
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .delete {
-    position: absolute;
-    bottom: 20px; /* Controla la distancia del botón Delete desde la parte inferior de la tarjeta */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #9b0202;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  position: absolute;
+  bottom: 20px; /* Controla la distancia del botón Delete desde la parte inferior de la tarjeta */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #9b0202;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .delete:hover {
-    background-color: #7e0101;
+  background-color: #7e0101;
 }
 
 button,
 input[type="submit"],
 input[type="button"] {
-    width: 100px;
-    background: #2A9D8F;
-    color: white;
-    border: 0;
-    outline: 0;
-    padding: 15px;
-    border-radius: 3px;
-    margin-top: 15px;
-    text-transform: capitalize;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 300ms;
+  width: 100px;
+  background: #2a9d8f;
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 15px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms;
 }
 
 .movie-item .edit:hover {
-    background: #e77b00;
+  background: #e77b00;
 }
 
-
 .movie-item .delete:hover {
-    background: #9b0202;
+  background: #9b0202;
 }
 
 .lateral {
-    background: #f6f7f9;
-    grid-area: lateral;
-    border-left: 1px solid #ddd;
-    padding: 20px;
-
+  background: #f6f7f9;
+  grid-area: lateral;
+  border-left: 1px solid #ddd;
+  padding: 20px;
 }
 
-.lateral>div {
-    box-sizing: border-box;
-    width: 90%;
-    margin: 20px;
-    padding: 20px;
-    padding-top: 10px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 6px #ddd;
+.lateral > div {
+  box-sizing: border-box;
+  width: 90%;
+  margin: 20px;
+  padding: 20px;
+  padding-top: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
 }
-
 
 .lateral input[type="text"],
 .lateral input[type="search"],
-.lateral textarea
-{
-    display: block;
-    margin: 0 auto;
-    margin-top: 15px;
-    padding: 12px;
-    border-radius: 5px;
-    background: #f6f7f9;
-    color: #454545;
-    width: 80%;
-    opacity: 4;
-    outline: 0;
-    border-color: transparent;
+.lateral textarea {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #f6f7f9;
+  color: #454545;
+  width: 80%;
+  opacity: 4;
+  outline: 0;
+  border-color: transparent;
 }
-
-
 
 .footer {
-    grid-area: footer;
-    color: #454545;
-    border-top: 1px solid white;
-    text-align: left;
-    line-height: 68px;
-    padding-left: 25px;
+  grid-area: footer;
+  color: #454545;
+  border-top: 1px solid white;
+  text-align: left;
+  line-height: 68px;
+  padding-left: 25px;
 }
 
+@media (max-width: 1085px) {
+  .content {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
 
-@media (max-width:1085px){
-    .content{
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .movie-item{
-        width:80%
-    }
+  .movie-item {
+    width: 80%;
+  }
 }
-
-
