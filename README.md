@@ -1,15 +1,13 @@
-This project is a movie catalog that acts as a showcase for the movies you've watched this year. It utilizes HTML, CSS, and JavaScript to create an interactive and dynamic user interface.
+This is a project where you can add the movies you have seen and they will appear with their own poster. You can also leave a review of what you thought of the movie and it has a search engine for your movies. You can reload the page without losing the previous storage.
 
-Description:
-The goal of this project is to provide an easy and fun way to keep track of the movies you've watched throughout the year. You can add new movies to your list, remove ones you've already seen, and browse through movies intuitively.
+It is made with HTML, CSS and JS (modules)
 
-Features:
-Add new movies to your list.
-Remove movies from your list.
-View a complete catalog of all available movies.
+To start it, you only have to open the index.html of the "src" folder on your server
 
-Technologies Used:
+---
 
-- HTML: For the basic structure of the web page.
-- CSS: For the design and styling of the user interface.
-- JavaScript: For creating interactive and dynamic components.
+Este es un proyecto en donde puedes añadir las películas que has visto y a pareceran con su propio cartel. También puedes dejar una review de lo que te ha parecido la pelicula y tiene un buscador de tus películas. Puedes recargar la página sin perder el alamacenamiento anterior.
+
+Está hecho con HTML, CSS y JS(modulos)
+
+Para iniciarla, unicamente tienes que abrir en tu servidor el index.html de la carpeta "src"
