@@ -14,18 +14,18 @@ export default function () {
     deleteBtn.onclick = function () {
       const movie_id = this.getAttribute("data-id");
 
-      // Remove poster from localStorage
+      // Remove poster from storage // Borra el poster del "storage"
       localStorage.removeItem(`poster-${movie_id}`);
 
-      // Remove movie from storage
+      // Remove movie from storage // Borra la película del "storage"
       const new_movie_stored = moviesStorage.filter(
         (movie) => movie.id !== parseInt(movie_id),
       );
 
-      // Update localStorage
+      // Update storage // Actualiza el "storage"
       storageInstance.save(new_movie_stored);
 
-      // Update movie list
+      // Update movie list// Actualiza la lista de películas
       listInstance.show(new_movie_stored);
     };
   });

@@ -6,7 +6,7 @@ export default class Add {
     this.storage = new storage();
     this.list = new list();
 
-    //Catch DOM elements
+    //Catch DOM elements // Seleccionar en el DOM los elementos
     this.titleField = document.querySelector("#title");
     this.descriptionField = document.querySelector("#description");
     this.save_btn = document.querySelector("#save");
@@ -16,7 +16,7 @@ export default class Add {
     this.save_btn.onclick = (e) => {
       e.preventDefault();
 
-      //
+      //Save the movies and thir data in  the storage // Guarda las películas y sus datos en el "storage"
       let movies = this.storage.getData();
       let lastId = this.storage.getLastId();
       console.log(movies, lastId);

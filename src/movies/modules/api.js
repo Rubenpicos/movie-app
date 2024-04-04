@@ -6,14 +6,14 @@ export default class API {
 
       if (response.ok) {
         const data = await response.json();
-        // Devuelve la URL del póster de la primera película encontrada
+        // Return the poster of the first movie found // Devuelve el póster de la primera película encontrada
         if (data.results && data.results.length > 0) {
           const posterPath = data.results[0].poster_path;
           return posterPath
             ? `https://image.tmdb.org/t/p/w500${posterPath}`
             : null;
         } else {
-          return null; // No se encontraron resultados
+          return null; // No concidences // No se encontraron resultados
         }
       } else {
         throw new Error("Failed to fetch data");

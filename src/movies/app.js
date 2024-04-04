@@ -5,7 +5,7 @@ import search from "./modules/search.js";
 
 export default class App {
   constructor() {
-    //start props
+    //Start props // Activa los props
 
     this.add = new Add();
     this.list = new list();
@@ -13,13 +13,13 @@ export default class App {
   }
 
   load() {
-    //add movies
+    //Add movies //Añade las películas
     this.add.movieSave();
     //
     const movies = this.storage.getData();
-    //list movies
+    //List movies // Lista las películas
     this.list.show(movies);
-    //Search movies
+    //Search movies// Busca las películas
 
     search();
   }
